@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "662254647416",
+    "project_id": "mybank-ffae2",
+    "storage_bucket": "mybank-ffae2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662254647416:android:674c1a6766ce57d314d58d",
+        "android_client_info": {
+          "package_name": "com.enesbaskaya.mybank"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOdjS0wKh6-p-xuMpI2BqhvYOuc-K3xwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

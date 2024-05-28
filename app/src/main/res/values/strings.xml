@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">MyBank</string>
+
+
+    <string name="message_unknown_error">Bilinmeyen bir hata oluştu</string>
+    <string name="message_no_internet_connection">Lütfen internet bağlantınızı kontrol ediniz</string>
+    <string name="message_bank_list_not_found">Banka listesi bulunamadı</string>
+
+
+    <string name="tv_bank_branch">Şube:</string>
+    <string name="tv_city_and_district">İlce/İl:</string>
+    <string name="tv_bank_type">Tür:</string>
+    <string name="tv_bank_code">Banka Kodu:</string>
+    <string name="tv_address_name">Adres Adı:</string>
+    <string name="tv_address_detail">Adres:</string>
+    <string name="tv_postal_code">Posta Kodu:</string>
+    <string name="tv_region_coordinatorship">Bölge Koordinatörü:</string>
+    <string name="tv_on_off_site">Site İçi: </string>
+    <string name="tv_on">Açık</string>
+    <string name="tv_off">Kapalı</string>
+    <string name="tv_on_site">Site içinde</string>
+    <string name="tv_off_site">Site dışında</string>
+
+
+    <string name="title_bank_info">Banka Bilgisi</string>
+    <string name="title_address_info">Adres Bilgileri</string>
+    <string name="title_nearest_ATM">En Yakın ATM</string>
+    <string name="title_bank_detail">Banka Detayı</string>
+    <string name="title_banks">Bankalar</string>
+
+
+
+    <string name="btn_go_address">Adrese Git</string>
+    <string name="btn_try_again">Tekrar Dene</string>
+    <string name="hint_search_bank">Banka ara</string>
+
+
+
+
+</resources>
