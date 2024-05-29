@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.wrapContentWidth
@@ -28,10 +27,10 @@ import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailAppBar(
+fun AppBarListScreen(
     title: String,
-    onBackClick: () -> Unit,
-    content: @Composable ColumnScope.() -> Unit,
+    onSettingClick: () -> Unit,
+    content: @Composable ColumnScope.() -> Unit
 ) {
     Column(modifier = Modifier.fillMaxSize()) {
         TopAppBar(
@@ -45,9 +44,9 @@ fun DetailAppBar(
                     color = Color.White
                 )
             },
-            navigationIcon = {
-                IconButton(onClick = { onBackClick.invoke() }) {
-                    Icon(Icons.Filled.ArrowBack, "")
+            actions = {
+                IconButton(onClick = { onSettingClick.invoke() }) {
+                    Icon(Icons.Filled.Settings, "")
                 }
             },
             colors = TopAppBarDefaults.topAppBarColors(
@@ -65,10 +64,10 @@ fun DetailAppBar(
 
 @Preview(showBackground = true)
 @Composable
-fun DetailAppBarPreview() {
+fun ListScreenPreview() {
 
 
-    DetailAppBar("Detay", content = {
+    AppBarListScreen("Bankalar", onSettingClick = {}, content = {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -80,5 +79,5 @@ fun DetailAppBarPreview() {
                 text = "Content of the page", fontSize = 30.sp, color = Color.White
             )
         }
-    }, onBackClick = {})
+    })
 }

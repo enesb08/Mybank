@@ -39,7 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.enesbaskaya.mybank.R
 import com.enesbaskaya.mybank.data.model.BankDetail
-import com.enesbaskaya.mybank.ui.widget.DetailAppBar
+import com.enesbaskaya.mybank.ui.widget.AppBarWithBackButton
 import com.enesbaskaya.mybank.ui.widget.MyIcon
 
 @Composable
@@ -50,7 +50,7 @@ fun DetailContent(
     bankDetail: BankDetail
 ) {
 
-    DetailAppBar(
+    AppBarWithBackButton(
         title = stringResource(id = R.string.title_bank_detail),
         onBackClick = onBackClick
     ) {

@@ -34,6 +34,8 @@ fun ListScreen(navController: NavController, viewModel: ListScreenViewModel = hi
                 onValueChange = {
                     viewModel.filterBankList(it)
 
+                }, navigateToSetting = {
+                    navController.navigate(Screen.SettingScreen.route)
                 }) {
                 val bankDataJson = gson.toJson(it)
                 val encodedBankDataJson =

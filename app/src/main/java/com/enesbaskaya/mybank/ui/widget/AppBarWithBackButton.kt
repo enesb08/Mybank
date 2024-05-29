@@ -4,12 +4,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -27,7 +26,11 @@ import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ListAppBar(title: String, content: @Composable ColumnScope.() -> Unit) {
+fun AppBarWithBackButton(
+    title: String,
+    onBackClick: () -> Unit,
+    content: @Composable ColumnScope.() -> Unit,
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         TopAppBar(
             title = {
@@ -39,6 +42,11 @@ fun ListAppBar(title: String, content: @Composable ColumnScope.() -> Unit) {
                     textAlign = TextAlign.Center,
                     color = Color.White
                 )
+            },
+            navigationIcon = {
+                IconButton(onClick = { onBackClick.invoke() }) {
+                    Icon(Icons.Filled.ArrowBack, "")
+                }
             },
             colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = MaterialTheme.colorScheme.primary,
@@ -55,10 +63,10 @@ fun ListAppBar(title: String, content: @Composable ColumnScope.() -> Unit) {
 
 @Preview(showBackground = true)
 @Composable
-fun ListScreenPreview() {
+fun DetailAppBarPreview() {
 
 
-    ListAppBar("Bankalar", content = {
+    AppBarWithBackButton("Detay", content = {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -70,5 +78,5 @@ fun ListScreenPreview() {
                 text = "Content of the page", fontSize = 30.sp, color = Color.White
             )
         }
-    })
+    }, onBackClick = {})
 }

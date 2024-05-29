@@ -13,6 +13,7 @@ import androidx.navigation.navArgument
 import com.enesbaskaya.mybank.ui.screen.Screen
 import com.enesbaskaya.mybank.ui.screen.detail.DetailScreen
 import com.enesbaskaya.mybank.ui.screen.list.ListScreen
+import com.enesbaskaya.mybank.ui.screen.setting.SettingScreen
 import com.enesbaskaya.mybank.ui.screen.splash.SplashScreen
 
 
@@ -66,4 +67,6 @@ private fun NavGraphBuilder.appGraph(navController: NavHostController) {
             DetailScreen(navController, bankDataJson)
         }
     }
+    composable(Screen.SettingScreen.route) { SettingScreen(navController) }
+
 }

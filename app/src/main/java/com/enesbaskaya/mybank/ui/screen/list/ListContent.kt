@@ -15,7 +15,7 @@ import com.enesbaskaya.mybank.data.model.BankDetail
 import com.enesbaskaya.mybank.ui.screen.list.item.BankItem
 import com.enesbaskaya.mybank.ui.widget.CustomSearchView
 import com.enesbaskaya.mybank.ui.widget.EmptyPage
-import com.enesbaskaya.mybank.ui.widget.ListAppBar
+import com.enesbaskaya.mybank.ui.widget.AppBarListScreen
 import com.enesbaskaya.mybank.ui.widget.LoadingPage
 
 
@@ -26,11 +26,15 @@ fun ListContent(
     isLoading: Boolean,
     searchText: String,
     onValueChange: (String) -> Unit,
+    navigateToSetting: () -> Unit,
     navigateToDetail: (BankDetail) -> Unit
 
 ) {
 
-    ListAppBar(title = stringResource(id = R.string.title_banks)) {
+    AppBarListScreen(title = stringResource(id = R.string.title_banks),
+        onSettingClick = {
+            navigateToSetting.invoke()
+        }) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -94,7 +98,8 @@ fun ListScreenPreview() {
         bankList = arrayListOf(),
         isLoading = false,
         searchText = "",
-        onValueChange = {}
+        onValueChange = {},
+        navigateToSetting = {}
     ) {}
 }
 

@@ -3,6 +3,7 @@ package com.enesbaskaya.mybank.di
 import android.app.Application
 import android.content.Context
 import com.enesbaskaya.mybank.App
+import com.enesbaskaya.mybank.util.LocalDataManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,6 +29,13 @@ object ApplicationModule {
         return application.applicationContext
     }
 
+    @Singleton
+    @Provides
+    fun provideLocalDataManager(
+        application: Application,
+    ): LocalDataManager {
+        return LocalDataManager(application);
+    }
 
 
 }
